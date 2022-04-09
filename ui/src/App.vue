@@ -6,12 +6,29 @@
 </template>
 
 <script>
-
+import axios from 'axoios'
+export default {
+  name: 'App',
+  getName (){
+    axios.get("/objects/objects1/:name",{
+      output: 'json'
+    })
+  }
+}
 
 export default {
   name: 'App',
   
 }
+methods:{
+  postreq: function{
+          axios({ method: "POST", url: "http://127.0.0.1:8090/calc", data: data, headers: {"content-type": "text/plain" } }).then(result => { })
+          // this.response = result.data;
+        
+}
+          }
+
+
 </script>
 
 <style>
